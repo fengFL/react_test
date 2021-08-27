@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment } from "react";
+import Login from './pages/Login'
+import Admin from "./pages/Admin"
+import { Route, Switch, BrowserRouter } from "react-router-dom"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <Fragment>
+            <BrowserRouter>
+                {/* 引入路由 并包裹路由组件 */}
+                <Switch>
+                    <Route path="/login" component={Login} />
+                    <Route path="/admin" component={Admin} />
+                </Switch>
+
+            </BrowserRouter>
+
+        </Fragment>
+    )
 }
-
-export default App;
